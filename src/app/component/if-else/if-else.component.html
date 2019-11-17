@@ -1,0 +1,20 @@
+
+
+<mat-form-field>
+<input matInput type="text" [(ngModel)]="serverName" name="" value="">
+</mat-form-field>
+<!-- <mat-checkbox>Check me!</mat-checkbox> -->
+
+<!-- <button color="accent" (click)="onServerStatus()">Server Status</button> -->
+<!-- <p [ngStyle]="getColor()">Server name {{serverName}} and server status is {{onServerStatus()}}</p> -->
+<!-- <p>Server name {{serverName}} and server status is {{serverStatus}}</p> -->
+<button [disabled]='!allowNewServer' mat-raised-button color="warn"  (click)="onServerCreate()">Create A server</button>
+<!-- <p>{{servers}}</p> -->
+<!-- <app-server *ngFor="let item of servers"></app-server> -->
+<p *ngIf="showSelect"> Password is = sdfghj</p>
+<div *ngFor="let item of log; let i = index"
+[ngStyle]="{backgroundColor: i >= 5 ? '#8e24aa' : 'transparent'}"
+ [ngClass]="{'textColor': i >= 5}">
+{{item}}
+</div>
+<app-server></app-server>
